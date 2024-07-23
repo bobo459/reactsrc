@@ -16,10 +16,13 @@ import { ListWrapper } from "./Components/20240722/ListWrapper";
 import { AvatarWrapper } from "./Components/20240723/AvatarWrapper";
 import { ScoreWrapper } from "./Components/20240723/ScoreWrapper";
 import { CounterState } from "./Components/20240723/CounterState";
+import { Gallery } from "./Components/20240723/Gallery";
+
+
 function App() {
   return (
     <>
-    <CounterState />
+    <Gallery />
 
     </>
   );
