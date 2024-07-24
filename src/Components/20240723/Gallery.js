@@ -151,8 +151,8 @@ export function Gallery() {
   },[])
 
 
-  function Detail(){
-  
+  function onClick(){
+  //  setDetailOn(!detailON)
   }
 
   return (
@@ -172,7 +172,7 @@ export function Gallery() {
             <img src={sculptureList[count].url} alt={sculptureList[count].alt} />
           </Img>
           <Right>
-            <button onClick={Detail} >Detail</button>
+            <button onClick={onClick} >Detail</button>
             <Content>{sculptureList[count].description}</Content>
           </Right>
         </Box>
