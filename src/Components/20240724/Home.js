@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button } from "./Button";
+import { ItemList } from "./ItemList";
 import { Menu } from "./Menu";
 
 const Container = styled.div`
@@ -20,6 +21,7 @@ export function Home() {
         <SideMenu>
           <Menu />
         </SideMenu>
+
         <Content>
           <Button
             bgcolor="dodgerblue"
@@ -37,6 +39,9 @@ export function Home() {
             func={() => console.log("버튼3이 클릭됨")}
           />
           <Button />
+
+          <p></p>
+          <ItemList />
         </Content>
       </Container>
     </>

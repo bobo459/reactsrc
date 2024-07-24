@@ -15,9 +15,12 @@ const Li = styled.li`
   font-weight: 700;
 `;
 const Link = styled.a`
+  display: block;
+  width: 100%;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
-  padding: 0 5px;
+  font-size: 1.5rem;
+  padding: 10px 5px;
   &:hover {
     //& : this 라는 의미이다.  나의 뒤에 hover 가 붙으면 이렇게 해줘 라는 의미
     background-color: dodgerblue;
