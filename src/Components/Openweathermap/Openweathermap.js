@@ -62,42 +62,58 @@ export function Openweather() {
     navigator.geolocation.getCurrentPosition(geoOK, geoError);
   }, []); //최초 1회만 실행
 
-  function geoOK(position) {
+  //Async~await 방식의 비동기 코드는 반드시 함수 안에서 실행 되어야 하고
+  //함수선언문 앞에 async 키워드가 필요함!
+  async function geoOK(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+    const cityName = "seoul";
+    const urlCity = `https://api.openweathermap.org/data/2.5/find?q=${cityName}&appid=${API_KEY}&units=metric`;
+    // 1. Axios 사용법(Async~await)
+    try {
+      const response = await axios.get(urlCity); //await에서 멈춰있다가 axios.get을 성공하면 다시 돌아와서 실행
+      const data = response.data; //실패시 catch로 가서 에러가 뜬다.
+      console.log(data);
+      setCity(data.name);
+      setTemp(parseInt(data.main.temp));
+      setIcon(data.weather[0].icon);
+      setWeather(data.weather[0].main);
+    } catch (error) {
+      console.log("요청이 실패했습니다.", error);
+    }
 
     // 2.Axios사용법(Promise~then)
-    axios
-      .get(url)
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-        setCity(data.name);
-        setTemp(parseInt(data.main.temp));
-        setIcon(data.weather[0].icon);
-        setWeather(data.weather[0].main);
-      })
-      .catch((error) => {
-        console.log("요청이 실패했습니다.", error);
-      });
+    // axios
+    //   .get(url)
+    //   .then((response) => {
+    //     const data = response.data;
+    //     console.log(data);
+    //     setCity(data.name);
+    //     setTemp(parseInt(data.main.temp));
+    //     setIcon(data.weather[0].icon);
+    //     setWeather(data.weather[0].main);
+    //   })
+    //   .catch((error) => {
+    //     console.log("요청이 실패했습니다.", error);
+    //   });
 
     // 3.fetch 사용법
-  //   fetch(url)
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setCity(data.name);
-  //       setTemp(parseInt(data.main.temp));
-  //       setIcon(data.weather[0].icon);
-  //       setWeather(data.weather[0].main);
-  //     })
-  //     .catch((error) => {
-  //       console.log("요청이 실패했습니다.", error);
-  //     });
-   }
+    //   fetch(url)
+    //     .then((response) => {
+    //       return response.json();
+    //     })
+    //     .then((data) => {
+    //       console.log(data);
+    //       setCity(data.name);
+    //       setTemp(parseInt(data.main.temp));
+    //       setIcon(data.weather[0].icon);
+    //       setWeather(data.weather[0].main);
+    //     })
+    //     .catch((error) => {
+    //       console.log("요청이 실패했습니다.", error);
+    //     });
+  }
   function geoError() {
     alert("현재 위치정보를 찾을수 없습니다.");
   }
