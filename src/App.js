@@ -32,8 +32,8 @@ import { Openweather } from "./Components/Openweathermap/Openweathermap";
 function App() {
   return (
     <>
-      {/* <GlobalStyle />
-      <Home /> */}
+       {/* <GlobalStyle /> */}
+      {/* <Home />  */}
       <Openweather />
     </>
   );
