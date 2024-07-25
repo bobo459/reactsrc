@@ -16,7 +16,7 @@ import { Openweather } from "./Components/Openweathermap/Openweathermap";
 import { NinjasAPI } from "./Components/Openweathermap/NinjasAPI";
 import { BasicRouter } from "./Components/BasicRouter/BasicRouter";
 import { ReactRouter } from "./Components/BasicRouter/ReactRouter";
-
+import { MovieShop } from "./Components/MovieShop/MovieShop";
 // const GlobalStyle = createGlobalStyle`
 // @font-face {
 //     font-family: 'GmarketSansMedium';
@@ -37,7 +37,7 @@ function App() {
     <>
       {/* <GlobalStyle /> */}
       {/* <Home />  */}
-      <ReactRouter />
+      <MovieShop />
     </>
   );
 }

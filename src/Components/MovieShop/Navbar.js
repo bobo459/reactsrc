@@ -8,6 +8,9 @@ const Container = styled.div`
   background-color: dodgerblue;
   position: relative;
 `;
+
+//외부 컴포넌트인 link는 StyledLink = styled(Link)`라고 적는다,
+//Link는 html에 없는 친구라 그냥 쓰면 에러남. 관례임.
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
@@ -27,7 +30,7 @@ export function Navbar() {
         <StyledLink to="/">
           <NavItem icon="ti ti-home" name="HOME"></NavItem>
         </StyledLink>
-        <StyledLink to="/movielist">
+        <StyledLink to="/movie">
           <NavItem icon="ti ti-device-tv" name="MOVIE"></NavItem>
         </StyledLink>
         <StyledLink to="/search">

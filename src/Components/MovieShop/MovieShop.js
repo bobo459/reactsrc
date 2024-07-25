@@ -38,7 +38,7 @@ export function MovieShop() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/movielist" element={<MovieList />} />
+                <Route path="/movie" element={<MovieList />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
