@@ -14,6 +14,8 @@ import { createGlobalStyle } from "styled-components";
 import { Home } from "./Components/20240724/Home";
 import { Openweather } from "./Components/Openweathermap/Openweathermap";
 import { NinjasAPI } from "./Components/Openweathermap/NinjasAPI";
+import { BasicRouter } from "./Components/BasicRouter/BasicRouter";
+import { ReactRouter } from "./Components/BasicRouter/ReactRouter";
 
 // const GlobalStyle = createGlobalStyle`
 // @font-face {
@@ -35,7 +37,7 @@ function App() {
     <>
       {/* <GlobalStyle /> */}
       {/* <Home />  */}
-      <NinjasAPI />
+      <ReactRouter />
     </>
   );
 }
