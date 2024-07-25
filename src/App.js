@@ -13,6 +13,7 @@
 import { createGlobalStyle } from "styled-components";
 import { Home } from "./Components/20240724/Home";
 import { Openweather } from "./Components/Openweathermap/Openweathermap";
+import { NinjasAPI } from "./Components/Openweathermap/NinjasAPI";
 
 // const GlobalStyle = createGlobalStyle`
 // @font-face {
@@ -32,9 +33,9 @@ import { Openweather } from "./Components/Openweathermap/Openweathermap";
 function App() {
   return (
     <>
-       {/* <GlobalStyle /> */}
+      {/* <GlobalStyle /> */}
       {/* <Home />  */}
-      <Openweather />
+      <NinjasAPI />
     </>
   );
 }
