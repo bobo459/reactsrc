@@ -19,6 +19,8 @@ import { ReactRouter } from "./Components/BasicRouter/ReactRouter";
 import { MovieShop } from "./Components/MovieShop/MovieShop";
 import { ResponsivePage } from "./Components/Utils/ResponsivePage";
 import { ReactRef } from "./Components/Utils/ReactRef";
+import { TopDownAction } from "./Components/Unity/TopDownAction";
+
 // const GlobalStyle = createGlobalStyle`
 // @font-face {
 //     font-family: 'GmarketSansMedium';
@@ -39,7 +41,7 @@ function App() {
     <>
       {/* <GlobalStyle /> */}
       {/* <Home />  */}
-      <ResponsivePage />
+      <TopDownAction />
     </>
   );
 }
