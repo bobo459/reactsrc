@@ -4,9 +4,10 @@ import { Home } from "./Home";
 import { Dashboard } from "./Dashboard";
 import { Login } from "./Login";
 import { Error } from "./Error";
-import { Movie } from "./Movie";
 import { MovieList } from "./MovieList";
 import { Search } from "./Search";
+import { Movie } from "./Movie";
+import { MovieWrapper } from "./MovieWrapper";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -38,7 +39,10 @@ export function MovieShop() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/movie" element={<MovieList />} />
+                <Route path="/movie" element={<MovieWrapper />}>
+                  <Route index element={<MovieList />} />
+                  <Route path=":id" element={<Movie />} />
+                </Route>
                 <Route path="/search" element={<Search />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
